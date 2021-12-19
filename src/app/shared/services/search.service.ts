@@ -12,7 +12,7 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   getVideos(query: string): Observable<any> {
-    const url = `${this.API_URL}?q=${query}&key=${this.API_TOKEN}&part=snippet&type=video&maxResults=10`;
+    const url = `${this.API_URL}?q=${query}&key=${this.API_TOKEN}&part=snippet&type=video&maxResults=50`;
     return this.http.get(url)
       .pipe(
         map((response: any) => response.items));
